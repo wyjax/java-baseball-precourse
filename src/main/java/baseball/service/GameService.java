@@ -2,6 +2,7 @@ package baseball.service;
 
 import baseball.domain.GameModel;
 import baseball.generator.AnswerNumberGenerator;
+import baseball.type.GameStatus;
 import baseball.view.GameView;
 
 import static baseball.GameConstants.*;
@@ -29,9 +30,9 @@ public class GameService {
     }
 
     private boolean isContinueGame() {
-        int continueMenu = gameView.viewContinue();
+        GameStatus status = gameView.viewContinue();
 
-        return continueMenu == 1;
+        return GameStatus.CONTINUE.equals(status);
     }
 
     private void endGame() {

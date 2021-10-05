@@ -1,5 +1,6 @@
 package baseball.view;
 
+import baseball.type.GameStatus;
 import baseball.utils.StringUtils;
 import nextstep.utils.Console;
 
@@ -64,7 +65,7 @@ public class GameView {
         }
     }
 
-    public int viewContinue() {
+    public GameStatus viewContinue() {
         printMessage(CONTINUE_GUIDE_MESSAGE);
         String input;
 
@@ -72,7 +73,9 @@ public class GameView {
             input = Console.readLine();
         } while (isInValidContinueInput(input));
 
-        return Integer.parseInt(input);
+        int num = Integer.parseInt(input);
+
+        return GameStatus.of(num);
     }
 
     private boolean isInValidContinueInput(String input) {

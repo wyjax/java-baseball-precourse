@@ -74,4 +74,12 @@ public class GameModel {
     public boolean isSuccess() {
         return strike == GameConstants.ANSWER_LENGTH;
     }
+
+    public int getStrike() {
+        return strike;
+    }
+
+    public int getBall() {
+        return ball;
+    }
 }

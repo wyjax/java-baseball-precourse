@@ -5,3 +5,11 @@
 
 ## 과제 제출 과정
 * [과제 제출 방법](https://github.com/next-step/nextstep-docs/tree/master/precourse)
+
+## 기능 요구사항
+- 서로 다른 1~9범위수 N자리 정수 생성
+- 사용자의 입력 기능
+  - 정답 입력
+  - 게임 재시작 여부 입력  
+- 결과를 출력 기능
+- 예외처리 및 에러메시지

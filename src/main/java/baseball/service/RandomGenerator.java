@@ -1,4 +1,4 @@
-package baseball;
+package baseball.service;
 
 import nextstep.utils.Randoms;
 
@@ -12,16 +12,16 @@ public class RandomGenerator {
     private static final int START_NUMBER = 1;
     private static final int END_NUMBER = 9;
 
-    public List<String> create() {
+    public List<Integer> create() {
         return create(DEFAULT_SIZE);
     }
 
-    public List<String> create(int size) {
-        Set<String> result = new LinkedHashSet<>();
+    public List<Integer> create(int size) {
+        Set<Integer> result = new LinkedHashSet<>();
 
         while (result.size() < size) {
             int newNumber = Randoms.pickNumberInRange(START_NUMBER, END_NUMBER);
-            result.add(String.valueOf(newNumber));
+            result.add(newNumber);
         }
         return new ArrayList<>(result);
     }

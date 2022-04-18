@@ -9,6 +9,7 @@ import java.util.Set;
 
 public class RandomGenerator {
     private static final int DEFAULT_SIZE = 3;
+    private static final int MAX_SIZE = 9;
     private static final int START_NUMBER = 1;
     private static final int END_NUMBER = 9;
 
@@ -17,6 +18,9 @@ public class RandomGenerator {
     }
 
     public List<Integer> create(int size) {
+        if (size > MAX_SIZE) {
+            throw new IllegalArgumentException();
+        }
         Set<Integer> result = new LinkedHashSet<>();
 
         while (result.size() < size) {

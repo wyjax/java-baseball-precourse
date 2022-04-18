@@ -23,7 +23,7 @@ public class BaseBallGame {
         List<Integer> numbers = generator.create();
         Balls answerBalls = new Balls(numbers);
         while (isRunning) {
-            List<Integer> inputNumbers = gameView.inputNumber();
+            List<Integer> inputNumbers = gameView.inputNumber(NUMBER_LENGTH);
             Balls inputBalls = new Balls(inputNumbers);
             GameResult result = answerBalls.result(inputBalls);
             gameView.inputResult(result);

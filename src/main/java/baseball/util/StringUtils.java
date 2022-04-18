@@ -1,7 +1,9 @@
 package baseball.util;
 
 import java.util.ArrayList;
+import java.util.LinkedHashSet;
 import java.util.List;
+import java.util.Set;
 
 public class StringUtils {
 
@@ -10,15 +12,15 @@ public class StringUtils {
 
     public static List<Integer> parseIntegerListFromString(String string) {
         validateNumber(string);
-        List<Integer> integers = new ArrayList<>();
+        Set<Integer> integers = new LinkedHashSet<>();
         for (int i = 0; i < string.length(); i++) {
             Integer integer = Integer.valueOf(string.charAt(i) - '0');
             integers.add(integer);
         }
-        return integers;
+        return new ArrayList<>(integers);
     }
 
-    private static void validateNumber(String str) {
+    public static void validateNumber(String str) {
         try {
             Integer.parseInt(str);
         } catch (Exception e) {

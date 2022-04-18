@@ -10,7 +10,7 @@ public enum BallStatus {
     }
 
     public static boolean isBall(BallStatus status) {
-        return STRIKE.equals(status);
+        return BALL.equals(status);
     }
 
     public static boolean isNothing(BallStatus status) {
